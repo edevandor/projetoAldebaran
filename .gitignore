@@ -1,0 +1,31 @@
+# --- Dados (NUNCA versionar — confidenciais) ---
+data/
+
+# --- Logs ---
+logs/
+*.log
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Config local ---
+config/local/
+*.local.*
+
+# --- Pacote (gerado por pip install -e .) ---
+*.egg-info/

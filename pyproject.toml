@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projeto-aldebaran"
+version = "0.1.0"
+description = "Pipeline ETL inteligente para transformar relatorios ERP hierarquicos em dados analiticos limpos, KPIs auditaveis e saidas prontas para BI."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Edevandor", email = "edevandor@users.noreply.github.com" },
+]
+keywords = ["etl", "bi", "pipeline", "erp", "analytics", "kpi"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "openpyxl>=3.1",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "python-dateutil>=2.8",
+    "xlrd>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+namespaces = false
+where = ["src"]
+include = ["ingestion*", "validation*", "transformation*", "analytics*", "audit*", "export*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
